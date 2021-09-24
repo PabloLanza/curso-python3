@@ -1,11 +1,22 @@
 from random import randint
-megasena = list()
-palpites = list()
-c = 0
-quant = int(input('Quantos jogos você quer gerar? '))
-for c in range(0,quant):
-    for c in range(0, 6):
-        palpites.append(randint(1, 60))
-    megasena.append(palpites[:])
-    palpites.clear()
-print(megasena)
+from time import sleep 
+lista = list()
+jogos = list()
+quant = int(input('Quantos jogos você quer sortear? '))
+tot = 1
+while tot <= quant:
+    cont = 0
+    while True:
+        num = randint(1, 60)
+        if num not in lista:
+            lista.append(num)
+            cont = cont + 1
+        if cont >= 6:
+            break
+    lista.sort()    
+    jogos.append(lista[:])
+    lista.clear()
+    tot += 1
+for i, l in enumerate(jogos):
+    print(f'{i + 1}º jogo: {l}')
+    sleep(0.7)
