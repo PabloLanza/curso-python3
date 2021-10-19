@@ -14,5 +14,5 @@ def leia_Int(msg):
 
 
 
-n = leia_Int('Digite um valor inteiro: ')
+n = leia_Int('Digite um valor inteiro: ') 
 print(f'\033[0;32m Você digitou o número {n} \033[m')
